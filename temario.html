@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temario de Programación con JavaScript</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      header {
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+      }
+      section {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #444;
+      }
+      pre {
+        background: #f4f4f4;
+        padding: 10px;
+        border-radius: 8px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Temario de Programación con JavaScript</h1>
+    </header>
+
+    <section>
+      <h2>1. Introducción a la Programación y JavaScript</h2>
+      <h3>¿Qué es la programación?</h3>
+      <p>
+        La programación es el proceso de diseñar y construir un conjunto de instrucciones que una
+        computadora puede interpretar para realizar tareas específicas. Es la base de todas las
+        aplicaciones y sistemas que utilizamos a diario.
+      </p>
+
+      <h3>¿Cómo funcionan los lenguajes de programación?</h3>
+      <p>
+        Un lenguaje de programación sirve como puente entre los humanos y las máquinas,
+        permitiéndonos escribir instrucciones que las computadoras pueden entender. Se clasifican
+        en:
+      </p>
+      <ul>
+        <li>
+          <strong>Lenguajes de bajo nivel:</strong> Más cerca del lenguaje de máquina, como
+          Assembly. Son rápidos pero difíciles de escribir y leer.
+        </li>
+        <li>
+          <strong>Lenguajes de alto nivel:</strong> Más intuitivos y fáciles de usar, como
+          JavaScript y Python, ideales para desarrollar aplicaciones complejas con menos esfuerzo.
+        </li>
+      </ul>
+
+      <h3>Compiladores vs. Intérpretes</h3>
+      <p>
+        Los programas escritos en lenguajes de programación necesitan ser convertidos a lenguaje
+        máquina. Esto se logra a través de:
+      </p>
+      <ul>
+        <li>
+          <strong>Compiladores:</strong> Traducen todo el código a lenguaje máquina antes de
+          ejecutarlo, generando un archivo ejecutable.
+        </li>
+        <li>
+          <strong>Intérpretes:</strong> Traducen y ejecutan el código línea por línea, útil para
+          pruebas rápidas y lenguajes dinámicos como JavaScript.
+        </li>
+      </ul>
+
+      <h3>Instalación de Node.js y configuración del entorno</h3>
+      <p>
+        Node.js es un entorno que permite ejecutar JavaScript fuera del navegador. Para instalarlo:
+      </p>
+      <pre><code class="language-bash">
+# Descargar e instalar Node.js desde https://nodejs.org
+node -v  # Ver versión de Node.js
+npm -v   # Ver versión de npm
+    </code></pre>
+
+      <h3>Ejercicios:</h3>
+      <ul>
+        <li>
+          Escribe un programa simple en Node.js que imprima el titulo de mi siguiente libro "Los
+          trabas de puchito" en la consola.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Variables</h2>
+      <h3>¿Qué son las variables?</h3>
+      <p>
+        Las variables son contenedores para almacenar datos en memoria, que pueden cambiar durante
+        la ejecución de un programa. En JavaScript, se pueden declarar usando <code>var</code>,
+        <code>let</code>, o <code>const</code>.
+      </p>
+
+      <h3>Declaración de variables</h3>
+      <p>La declaración de variables puede hacerse de las siguientes maneras:</p>
+      <pre><code class="language-javascript">
+// Usando var (antiguo)
+var nombre = "Juan";
+
+// Usando let (recomendado para variables que cambian)
+let edad = 25;
+
+// Usando const (para valores constantes)
+const PI = 3.1416;
+    </code></pre>
+
+      <h3>Tipos de datos</h3>
+      <p>JavaScript soporta diferentes tipos de datos, como:</p>
+      <ul>
+        <li><strong>Números:</strong> <code>let numero = 42;</code></li>
+        <li><strong>Cadenas:</strong> <code>let texto = "Hola";</code></li>
+        <li><strong>Booleanos:</strong> <code>let esVerdadero = true;</code></li>
+        <li><strong>Objetos:</strong> <code>let persona = { nombre: "Ana", edad: 30 };</code></li>
+        <li><strong>Arreglos:</strong> <code>let colores = ["rojo", "verde", "azul"];</code></li>
+      </ul>
+
+      <h3>Ejercicios:</h3>
+      <ul>
+        <li>
+          Declara una variable usando <code>let</code> y almacena tu nombre. Luego imprímelo en la
+          consola.
+        </li>
+        <li>
+          Crea una constante llamada <code>PI</code> con el valor 3.1416 e intenta cambiar su valor.
+          ¿Qué sucede?
+        </li>
+        <li>Declara un arreglo con tus tres colores favoritos e imprímelo en la consola.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Estructuras de Control</h2>
+      <h3>Condicionales</h3>
+      <p>
+        Los condicionales permiten tomar decisiones en el programa según ciertas condiciones. Por
+        ejemplo:
+      </p>
+      <pre><code class="language-javascript">
+let edad = 18;
+if (edad >= 18) {
+  console.log("Eres mayor de edad");
+} else {
+  console.log("Eres menor de edad");
+}
+    </code></pre>
+
+      <h3>Ciclos</h3>
+      <p>
+        Los ciclos se utilizan para ejecutar un bloque de código varias veces. Existen varios tipos,
+        como <code>for</code>, <code>while</code> y <code>do-while</code>:
+      </p>
+      <pre><code class="language-javascript">
+for (let i = 0; i < 5; i++) {
+  console.log(`Número: ${i}`);
+}
+    </code></pre>
+
+      <h3>Uso de break y continue</h3>
+      <p>
+        Dentro de los ciclos, <code>break</code> detiene la ejecución del ciclo, mientras que
+        <code>continue</code> salta a la siguiente iteración.
+      </p>
+      <pre><code class="language-javascript">
+for (let i = 0; i < 10; i++) {
+  if (i === 5) break;
+  console.log(i);
+}
+    </code></pre>
+
+      <h3>Ejercicios:</h3>
+      <ul>
+        <li>
+          Escribe un programa que verifique si un número es par o impar usando un condicional.
+        </li>
+        <li>Crea un ciclo que imprima los números del 1 al 10 en la consola.</li>
+        <li>Modifica el ciclo anterior para que salte el número 5 usando <code>continue</code>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Funciones</h2>
+      <h3>Declaración y ejecución de funciones</h3>
+      <p>
+        Las funciones son bloques de código reutilizables que realizan una tarea específica. Aquí un
+        ejemplo básico:
+      </p>
+      <pre><code class="language-javascript">
+function saludar() {
+  console.log("Hola, mundo!");
+}
+saludar();
+    </code></pre>
+
+      <h3>Funciones anónimas</h3>
+      <p>
+        Una función anónima es aquella que no tiene nombre y se asigna a una variable para ser
+        reutilizada:
+      </p>
+      <pre><code class="language-javascript">
+const multiplicar = function (a, b) {
+  return a * b;
+};
+console.log(multiplicar(4, 6));
+    </code></pre>
+
+      <h3>Funciones flecha</h3>
+      <p>Las funciones flecha son una forma más compacta de escribir funciones en JavaScript:</p>
+      <pre><code class="language-javascript">
+const dividir = (a, b) => a / b;
+console.log(dividir(10, 2));
+    </code></pre>
+
+      <h3>Ejercicios:</h3>
+      <ul>
+        <li>Escribe una función que reciba tu nombre como parámetro y devuelva un saludo.</li>
+        <li>
+          Crea una función anónima que calcule el cuadrado de un número. ???? para chatgtp
+          matematicas evitemos
+        </li>
+        <li>
+          Escribe una función flecha que sume dos números y e imprima el resiltado en consola.
+        </li>
+      </ul>
+    </section>
+
+    <script>
+      hljs.highlightAll()
+    </script>
+  </body>
+</html>
