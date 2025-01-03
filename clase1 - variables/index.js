@@ -27,7 +27,7 @@ let string1 = 'hola'
 let number1 = 10
 
 // boolean
-let boolean1 = true
+let boolean1 = true | false
 
 // undefined
 let undefined1
