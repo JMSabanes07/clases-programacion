@@ -1,10 +1,14 @@
 import readline from 'readline'
+import { Bullet } from './bullet.js'
+import { pawns } from './pawns.js'
 
 export class Player {
   constructor(params) {
     this.position = params?.position || { x: 0, y: 0 }
     this.direction = params?.direction || 'right'
     this.icon = '→'
+    pawns.push({ name: 'player', data: this })
+
     // Configurar el stdin para recibir eventos keypress
     readline.emitKeypressEvents(process.stdin)
     process.stdin.setRawMode(true)
@@ -27,6 +31,9 @@ export class Player {
           break
         case 'right':
           this.moveRight()
+          break
+        case 'space':
+          this.shoot()
           break
       }
     })
@@ -65,5 +72,9 @@ export class Player {
   moveRight() {
     this.direction = 'right'
     this.onMove()
+  }
+
+  shoot() {
+    new Bullet(this.position, this.direction)
   }
 }

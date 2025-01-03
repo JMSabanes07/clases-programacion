@@ -1,9 +1,12 @@
 import { performance } from 'perf_hooks'
+import { pawns } from './pawns.js'
 import { Player } from './player.js'
+import { Bullet } from './bullet.js'
+
+new Player()
 
 const fps = 30
 const frameTime = 1000 / fps
-const player = new Player()
 
 let lastTime = performance.now()
 
@@ -29,13 +32,14 @@ const grid = [
 // Función para generar y mostrar un grid
 function renderGrid() {
   clearConsole()
-
   for (let y = 0; y < grid.length; y++) {
     for (let x = 0; x < grid[y].length; x++) {
       grid[y][x] = '─'
-      if (y === player.position.y && x === player.position.x) {
-        grid[y][x] = player.icon
-      }
+      pawns.forEach(pawn => {
+        if (y === pawn.data.position.y && x === pawn.data.position.x) {
+          grid[y][x] = pawn.data.icon
+        }
+      })
     }
   }
 
