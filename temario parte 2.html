@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temario de Programación - Parte Avanzada</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    section {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2, h3 {
+      color: #444;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Temario de Programación con JavaScript - Parte Avanzada</h1>
+  </header>
+
+  <section>
+    <h2>5. Objetos y Clases</h2>
+    <h3>Objetos en JavaScript</h3>
+    <p>Un objeto es una colección de propiedades y métodos. Las propiedades son valores asociados a un objeto, mientras que los métodos son funciones que se pueden ejecutar dentro del objeto.</p>
+    <pre><code class="language-javascript">
+const persona = {
+  nombre: "Juan",
+  edad: 30,
+  saludar: function() {
+    console.log(`Hola, mi nombre es ${this.nombre}`);
+  }
+};
+persona.saludar();
+    </code></pre>
+
+    <h3>Clases en JavaScript</h3>
+    <p>Las clases son plantillas para crear objetos con propiedades y métodos definidos.</p>
+    <pre><code class="language-javascript">
+class Animal {
+  constructor(nombre, tipo) {
+    this.nombre = nombre;
+    this.tipo = tipo;
+  }
+
+  describir() {
+    return `${this.nombre} es un ${this.tipo}`;
+  }
+}
+const gato = new Animal("Michi", "gato");
+console.log(gato.describir());
+    </code></pre>
+
+    <h3>Ejercicios:</h3>
+    <ul>
+      <li>Crea un objeto que represente un coche con propiedades como marca, modelo y un método para arrancar.</li>
+      <li>Escribe una clase para representar un rectángulo con métodos para calcular el área y el perímetro.</li>
+      <li>Crea una instancia de la clase que definiste y muestra sus propiedades y métodos en la consola.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. Promesas y Async/Await</h2>
+    <h3>Introducción a Promesas</h3>
+    <p>Las promesas son objetos que representan la eventual finalización (o falla) de una operación asíncrona.</p>
+    <pre><code class="language-javascript">
+const promesa = new Promise((resolve, reject) => {
+  const exito = true;
+
+  if (exito) {
+    resolve("Operación exitosa");
+  } else {
+    reject("Error en la operación");
+  }
+});
+
+promesa.then((mensaje) => console.log(mensaje)).catch((error) => console.error(error));
+    </code></pre>
+
+    <h3>Async/Await</h3>
+    <p>Async/Await es una forma más clara y concisa de trabajar con operaciones asíncronas, basada en promesas.</p>
+    <pre><code class="language-javascript">
+async function obtenerDatos() {
+  try {
+    const respuesta = await fetch("https://api.example.com/datos");
+    const datos = await respuesta.json();
+    console.log(datos);
+  } catch (error) {
+    console.error("Error al obtener datos", error);
+  }
+}
+obtenerDatos();
+    </code></pre>
+
+    <h3>Ejercicios:</h3>
+    <ul>
+      <li>Escribe una promesa que simule una operación de carga de datos con un <code>setTimeout</code>.</li>
+      <li>Implementa una función asíncrona que haga una llamada ficticia a una API usando <code>fetch</code>.</li>
+      <li>Crea un ejemplo donde combines Promesas y Async/Await para manejar múltiples operaciones asíncronas.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>7. Manipulación del DOM</h2>
+    <h3>Seleccionar Elementos</h3>
+    <p>Podemos seleccionar elementos del DOM usando métodos como <code>querySelector</code> y <code>getElementById</code>.</p>
+    <pre><code class="language-javascript">
+const encabezado = document.querySelector("h1");
+console.log(encabezado.textContent);
+    </code></pre>
+
+    <h3>Modificar Contenido</h3>
+    <p>Es posible cambiar el contenido y los estilos de los elementos.</p>
+    <pre><code class="language-javascript">
+const parrafo = document.querySelector("p");
+parrafo.textContent = "Este es un texto modificado.";
+parrafo.style.color = "blue";
+    </code></pre>
+
+    <h3>Eventos</h3>
+    <p>Podemos agregar interactividad con eventos como <code>click</code>, <code>mouseover</code>, etc.</p>
+    <pre><code class="language-javascript">
+const boton = document.querySelector("button");
+
+boton.addEventListener("click", () => {
+  alert("¡Botón clickeado!");
+});
+    </code></pre>
+
+    <h3>Ejercicios:</h3>
+    <ul>
+      <li>Crea un botón que cambie el color de fondo del documento al hacer clic.</li>
+      <li>Escribe un programa que permita añadir elementos a una lista desde un campo de texto.</li>
+      <li>Implementa un contador que se incremente al hacer clic en un botón.</li>
+    </ul>
+  </section>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+</body>
+</html>
