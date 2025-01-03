@@ -1,4 +1,9 @@
-const { performance } = require('perf_hooks')
+import { performance } from 'perf_hooks'
+import { pawns } from './pawns.js'
+import { Player } from './player.js'
+import { Bullet } from './bullet.js'
+
+new Player()
 
 const fps = 30
 const frameTime = 1000 / fps
@@ -24,29 +29,17 @@ const grid = [
   ['─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─'],
 ] // Grid inicial
 
-const player = direction => {
-  if (direction === 'up') {
-    return '↑'
-  }
-  if (direction === 'down') {
-    return '↓'
-  }
-  if (direction === 'left') {
-    return '←'
-  }
-  if (direction === 'right') {
-    return '→'
-  }
-}
-
 // Función para generar y mostrar un grid
 function renderGrid() {
   clearConsole()
   for (let y = 0; y < grid.length; y++) {
     for (let x = 0; x < grid[y].length; x++) {
-      if (y === 5 && x === 5) {
-        grid[y][x] = player('right')
-      }
+      grid[y][x] = '─'
+      pawns.forEach(pawn => {
+        if (y === pawn.data.position.y && x === pawn.data.position.x) {
+          grid[y][x] = pawn.data.icon
+        }
+      })
     }
   }
 
