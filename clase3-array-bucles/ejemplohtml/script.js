@@ -21,7 +21,6 @@ for (let key in autitos) {
   const autito = autitos[key]
   const article = document.createElement('article')
   article.innerHTML = `
-    
     <h1>${autito.modelo}</h1>
     <div class="imageContainer">
       <img id="img1" src="${autito.imgUrl}" alt="" width="300">
