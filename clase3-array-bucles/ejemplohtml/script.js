@@ -21,10 +21,14 @@ for (let key in autitos) {
   const autito = autitos[key]
   const article = document.createElement('article')
   article.innerHTML = `
+    
     <h1>${autito.modelo}</h1>
     <div class="imageContainer">
       <img id="img1" src="${autito.imgUrl}" alt="" width="300">
-      <img id="img2" src="${autito.img2}" alt="" width="300">
+      <div class="asd">
+        <img id="img2" src="${autito.img2}" alt="" width="300">
+        <h2>Precio: ${autito.precio}</h2>
+      </div>
     </div>
   `
   container.appendChild(article)

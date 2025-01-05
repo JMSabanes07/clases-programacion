@@ -6,13 +6,16 @@ article {
   position: relative;
 }
 
-#img1:hover + #img2 {
+#img1:hover + .asd {
   display: block;
 }
 
-#img2 {
+.asd {
   display: none;
   position: absolute;
   top: 0;
   left: 100%;
+}
+
+#img2 {
 }
