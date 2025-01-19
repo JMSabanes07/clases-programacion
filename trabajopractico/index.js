@@ -17,6 +17,31 @@ const mainMenu = async () => {
   console.log('')
 
   rl.question('>> ', async respuesta => {
+    if (respuesta === '1') {
+      rl.question('¿Cual juego te gustaría ver? ', gameName => {
+        let game
+
+        for (let i = 0; i < games.length; i++) {
+          if (games[i].name.toLowerCase() === gameName.toLowerCase()) {
+            game = games[i]
+          }
+        }
+
+        if (!game) {
+          console.log('Juego no encontrado')
+        } else {
+          console.log(game)
+        }
+        mainMenu()
+      })
+    }
+    if (respuesta === '2') {
+      console.log(games)
+    }
+    if (respuesta === '3') {
+      console.log('Saliendo...')
+      rl.close()
+    }
     /**
      * CODIGO DEL TRABAJO PRACTICO ACA
      */
